@@ -176,23 +176,105 @@ function stringToArray(string) {
 
 console.log(stringToArray("random string"));
 
-//deveti zadatak (ne valja)
-
+//deveti zadatak 
 // Write a function that accepts a number as a parameter and check if the number is prime or not. 
 // Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
 
-
 function ifPrime(num) {
-    var result;
-    for (i = 2; i < Infinity; i++) {
-        if (i !== num) {            
-            if ((num > 1) && (num % i) !== 0) {
-                return true;
-            } else {
-                return false;
+    var prime = 0;
+    if (num <= 2) {
+        return false;
+    } else {
+        for (var i = 2; i < num; i++) {
+            if ((num % i) !== 0) {
+                prime++;
             }
+        }
+        if (prime === num - 2) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
 
-console.log(ifPrime(3));
+console.log(ifPrime(89));
+
+//deseti zadatak
+// Write a function which replaces spaces in a string with provided separator. If separator is not provided use “-” (dash) as default separator.
+
+//     "My random string", "_" -> "My_random_string"
+//     "My random string", "+" -> "My+random+string"
+//     "My random string" -> "My-random-string"
+function isEmpty(string,separator){
+  var res = "";
+    for (var i = 0; i < string.length; i++) {
+        if(string[i] === " "){
+            if(typeof separator !== "undefined"){
+                res += separator;
+            }else{
+                res += "-";
+            }
+        }else{
+            res += string[i];
+        }
+    } 
+     return res;
+}
+
+console.log(isEmpty("my new string"));
+
+
+//jedanaesti zadatak
+// Write a function to get first n number of characters and add “...” at the end of newly created string.
+function getFirst(string,n){
+    var res = "";
+    var output = "";
+    for (var i = 0; i < n; i++) {
+         res += string[i];
+         output = res+"...";
+    }
+    return output;
+}
+console.log(getFirst("perazdera",5));
+
+//dvanaesti zadatak
+// Write a function to find number of years until retirement based on year of birth.
+
+function untilRetirement(birthYear, pensionAge) {
+    var result;
+    result = birthYear + pensionAge - new Date().getFullYear();
+    return result;
+}
+
+console.log(untilRetirement(1958, 65));
+
+//trinaesti zadatak
+// Write a function to convert array of strings to array of numbers. Filter out all non number values.
+
+
+//cetrnaesti zadatak
+// Write a function to calculate number of years until retirement based on year of birth. Retirement for men is at age of 65 and for women at age of 60.
+// If someone is already in retirement proper message should be provided.
+
+function untilRetirement(birthYear,sex) {
+    var result;
+    var pensionAgeM = 65;
+    var pensionAgeF = 60;
+    var output = "";
+    if (sex === "m") {
+        result = birthYear + pensionAgeM - new Date().getFullYear();
+    } else if (sex === "f") {
+        result = birthYear + pensionAgeF - new Date().getFullYear();
+    }
+    if (result < 1 && result > -1) {
+        output = "Cestitamo, od danas ste u penziji!";
+    } else if (result < 0) {
+        output = "Vec ste u penziji!";
+    } else {
+        output = "Do penzije imate jos " + result + " godina.";
+    }
+    return output;
+}
+
+console.log(untilRetirement(1930, "m"));
