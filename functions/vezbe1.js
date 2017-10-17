@@ -1,3 +1,4 @@
+
 // Write a function to check whether an `input` is a string or not.
 
 // "My random string" -> true
@@ -278,3 +279,18 @@ function untilRetirement(birthYear,sex) {
 }
 
 console.log(untilRetirement(1930, "m"));
+
+
+//proba
+function sorting(inputArray){
+    var m = inputArray.sort();
+    return m;
+}
+
+console.log(sorting([1,5,6,-2,8,-15]));
+//proba
+function reverseNumber(input){
+    var m = input.reverse();
+    return m;
+}
+console.log(reverseNumber(123456));
