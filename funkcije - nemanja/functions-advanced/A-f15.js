@@ -3,6 +3,8 @@
 // "My random string", "JS " -> "JS My random string"
 // "My random string", "JS ", 10 -> "My random JS string"
 
+// Use literal notation, private and immediate functions.
+
 
 function insertString(string, insertion, n) {
     n = n || 1;
@@ -36,5 +38,3 @@ function insertString(string, insertion, n) {
 
 
 console.log(insertString("My random string", "JS "));
-
-
