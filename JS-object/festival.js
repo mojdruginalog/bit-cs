@@ -2,19 +2,23 @@
 
 (function () {
 
-    var akcija = new Genre("akcija")
+    var akcija = new Genre('akcija');
     var spiderman = new Movie("Spiderman", akcija, 120);
+    var festival = new Festival('Kan');
+    
+
 
     console.log(akcija.getData());
-    console.log(spiderman.getData());
     
     var program = new Program(new Date());
     var program1 = new Program(new Date());
     program.addMovie(spiderman);
     program1.addMovie(spiderman);
     
+    festival.addProgram(program);
+    festival.addProgram(program1);
     
-    console.log(program.getData());
+    console.log(festival.getData());
 
 
 })();
@@ -22,9 +26,10 @@
 function Genre(name) {
     this.name = name;
     this.getData = function () {
-        var upperC = this.name[0] + this.name[this.name.length - 1]
-        return upperC.toUpperCase();
-    }
+        var output = this.name[0] + this.name[this.name.length - 1];
+        var result = output.toUpperCase();
+        return result;
+    };
 }
 
 function Movie(title, genre, length) {
@@ -56,10 +61,11 @@ function Program(date) {
 
     this.addMovie = function (movie) {
         this.listOfMovies.push(movie);
+        this.numOfMovies++;
     }
 }
 
-function Festival(name, listOfPrograms, numOfAllMovies) {
+function Festival(name) {
     this.name = name;
     this.listOfPrograms = [];
     this.numOfAllMovies = 0;
@@ -68,10 +74,14 @@ function Festival(name, listOfPrograms, numOfAllMovies) {
         var allPrograms = '';
 
         for (var i = 0; i < this.listOfPrograms.length; i++) {
-            allPrograms += this.listOfPrograms[i] + '\n';
+            allPrograms += this.listOfPrograms[i].getData() + '\n';
 
         }
         return this.name + ', ' + this.numOfAllMovies + '\n' + allPrograms;
+    }
+    this.addProgram = function(program){
+        this.listOfPrograms.push(program);
+        this.numOfAllMovies++;
     }
 }
 
