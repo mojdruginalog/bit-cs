@@ -1,0 +1,24 @@
+.crveno {
+    border: 2px solid red;
+}
+/* #pobeze{
+    
+    position: absolute;
+    top: 30px;
+    right: 50px;
+} */
+.crveno{
+    width: 300px;
+    height: 300px;
+}
+.plavo {
+    background-color: blue;
+}
+.zeleno {
+    background-color: greenyellow;
+}
+#chat {
+    border: solid 2px black;
+    width: 600px;
+    height: 600px;
+}

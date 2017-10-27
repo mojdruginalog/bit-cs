@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+            <h1 class="text-center">Movie list</h1>
+            <hr>
+    <form>
+        <div class="form-group">
+          <label for="movieTitle">Title</label>
+          <input type="text" class="form-control" id="movieTitle" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+          <label for="movieLength">Length</label>
+          <input type="text" class="form-control" id="movieLength" placeholder="Enter length">
+        </div>
+        <div class="form-group">
+         <select id="movieSelect" class="form-control">
+             <option value="none">-</option>
+             <option value="akcija">akcija</option>
+             <option value="horor">horor</option>
+         </select>
+        </div>
+        <div id="error" class="alert alert-danger"></div>
+        <input type="button" class="btn btn-success form-control" onclick="createMovie()" value="Create Movie">
+        <div id="ubaceniFilmovi"></div>
+      </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
